@@ -222,11 +222,14 @@
       margin-top: 0.6rem;
     }
     .nguon-anh {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       line-height: 1.5;
       color: var(--chu-phu);
       margin: 1rem 0 0;
     }
+    .nguon-anh summary { cursor: pointer; display: inline-block; }
+    .nguon-anh p { margin: 0.4rem 0 0; }
+    .nguon-in { display: none; }
     .nguon-anh a { color: var(--chu-phu); }
 
     /* CHAN TRANG */
@@ -254,6 +257,11 @@
       .nut-in { display: none; }
       .tieu-de, .so-ngay, .han-chot { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       h2 { break-after: avoid; }
+      .nguon-anh { display: none; }
+      .nguon-in { display: block; font-size: 0.7rem; line-height: 1.5; color: var(--chu-phu); margin-top: 1rem; }
+      .nguon-in a { color: var(--chu-phu); text-decoration: none; }
+      .anh-dau img { max-height: 9cm; object-fit: cover; }
+      .anh-ngay { max-height: 6.5cm; width: auto; max-width: 100%; }
     }
   </style>
 </head>
@@ -382,14 +390,21 @@
 
   <footer>
     <p class="ky-ten">Ban tổ chức Phượng Hoàng Travel</p>
-    <p class="nguon-anh">Ảnh minh họa từ Wikimedia Commons:
-      <a href="https://commons.wikimedia.org/wiki/File:M%E1%BB%99c_Ch%C3%A2u_District,_Vietnam_(Unsplash).jpg">cao nguyên Mộc Châu</a> (Linh Pham, CC0);
+    <details class="nguon-anh">
+      <summary>Nguồn ảnh</summary>
+      <p>Ảnh minh họa từ Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:M%E1%BB%99c_Ch%C3%A2u_District,_Vietnam_(Unsplash).jpg">cao nguyên Mộc Châu</a> (Linh Pham, CC0);
       <a href="https://commons.wikimedia.org/wiki/File:Moc-chau-tea-doi-2094890_960_720.jpg">đồi chè Mộc Châu</a> (ToanNguyen, CC0);
       <a href="https://commons.wikimedia.org/wiki/File:%C4%90%C3%A8o_Pha_%C4%90in_-_panoramio.jpg">đèo Pha Đin</a> (ChieuTimViet, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>);
       <a href="https://commons.wikimedia.org/wiki/File:The_Museum_of_Dien_Bien_Phu_Victory_(front,_2022).jpg">Bảo tàng Chiến thắng lịch sử Điện Biên Phủ</a> (Ioe2015, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>);
       <a href="https://commons.wikimedia.org/wiki/File:Hanoi_-_Turtle_Tower_(Th%C3%A1p_R%C3%B9a),_Ho%C3%A0n_Ki%E1%BA%BFm_Lake.jpg">Tháp Rùa, Hồ Gươm</a> (P. Hughes, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).
-      Ảnh đã thu nhỏ kích thước, không chỉnh sửa nội dung.
-    </p>
+      Ảnh đã thu nhỏ kích thước, không chỉnh sửa nội dung.</p>
+    </details>
+    <p class="nguon-in">Ảnh minh họa từ Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:M%E1%BB%99c_Ch%C3%A2u_District,_Vietnam_(Unsplash).jpg">cao nguyên Mộc Châu</a> (Linh Pham, CC0);
+      <a href="https://commons.wikimedia.org/wiki/File:Moc-chau-tea-doi-2094890_960_720.jpg">đồi chè Mộc Châu</a> (ToanNguyen, CC0);
+      <a href="https://commons.wikimedia.org/wiki/File:%C4%90%C3%A8o_Pha_%C4%90in_-_panoramio.jpg">đèo Pha Đin</a> (ChieuTimViet, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>);
+      <a href="https://commons.wikimedia.org/wiki/File:The_Museum_of_Dien_Bien_Phu_Victory_(front,_2022).jpg">Bảo tàng Chiến thắng lịch sử Điện Biên Phủ</a> (Ioe2015, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>);
+      <a href="https://commons.wikimedia.org/wiki/File:Hanoi_-_Turtle_Tower_(Th%C3%A1p_R%C3%B9a),_Ho%C3%A0n_Ki%E1%BA%BFm_Lake.jpg">Tháp Rùa, Hồ Gươm</a> (P. Hughes, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).
+      Ảnh đã thu nhỏ kích thước, không chỉnh sửa nội dung.</p>
     <button class="nut-in" onclick="window.print()">In / Lưu PDF</button>
   </footer>
 
