@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Tour Tây Bắc Mộc Châu - Điện Biên</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nen: #ffffff;
+      --nen-phu: #F2E9DD;   /* mau nen nhat */
+      --chu: #1f2937;
+      --chu-phu: #4b5563;
+      --xanh: #0F75BC;      /* mau chinh - xanh duong */
+      --nau: #7B5C3E;       /* mau phu - nau dat */
+      --vang: #F5EE30;      /* mau nhan - vang, chi dung tren nen xanh */
+      --trang: #ffffff;
+      --vien: #E2D5C3;
+    }
+    * { box-sizing: border-box; }
+    html { font-size: 20px; }
+    @media (min-width: 640px) { html { font-size: 22px; } }
+    body {
+      margin: 0;
+      background: var(--nen-phu);
+      color: var(--chu);
+      font-family: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-text-size-adjust: 100%;
+    }
+    .trang {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--nen);
+      min-height: 100vh;
+    }
+
+    /* TIEU DE */
+    .tieu-de {
+      background: var(--xanh);
+      color: #ffffff;
+      text-align: center;
+      padding: 2rem 16px 1.8rem;
+    }
+    .tieu-de .nhan {
+      display: inline-block;
+      border: 2px solid var(--vang);
+      color: var(--trang);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .tieu-de h1 {
+      margin: 0.9rem 0 0.3rem;
+      font-size: 1.75rem;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+    .tieu-de h1 span { display: block; color: var(--vang); }
+    .nowrap { white-space: nowrap; }
+    .tieu-de .ngay {
+      margin: 0.6rem 0 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    @media (min-width: 640px) { .tieu-de h1 { font-size: 2.1rem; } }
+
+    /* KHOI NOI DUNG */
+    main { padding: 0 16px 1rem; }
+    section { padding: 1.6rem 0 0.4rem; }
+    h2 {
+      color: var(--xanh);
+      font-size: 1.35rem;
+      line-height: 1.4;
+      margin: 0 0 0.9rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 3px solid var(--nau);
+    }
+    p { margin: 0 0 0.8rem; }
+    strong { color: var(--chu); }
+
+    /* THONG TIN NHANH */
+    .thong-tin {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--vien);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .thong-tin li {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--vien);
+    }
+    .thong-tin li:last-child { border-bottom: none; }
+    .thong-tin .muc {
+      display: block;
+      color: var(--nau);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* UU DIEM */
+    .uu-diem { margin: 0; padding: 0; list-style: none; }
+    .uu-diem li {
+      position: relative;
+      padding: 0.2rem 0 0.8rem 1.6rem;
+    }
+    .uu-diem li::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 0.7rem;
+      width: 0.6rem;
+      height: 0.6rem;
+      background: var(--nau);
+      border-radius: 50%;
+    }
+
+    /* HANH TRINH */
+    .ngay-di {
+      display: flex;
+      gap: 0.9rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--vien);
+      break-inside: avoid;
+    }
+    .ngay-di:last-of-type { border-bottom: none; }
+    .so-ngay {
+      flex: 0 0 auto;
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 50%;
+      background: var(--xanh);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+    .so-ngay small { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em; }
+    .so-ngay b { font-size: 1.2rem; }
+    .ngay-di h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.05rem;
+      color: var(--xanh);
+      line-height: 1.45;
+    }
+    .ngay-di .thu { display: block; color: var(--chu-phu); font-size: 0.9rem; font-weight: 600; }
+    .ngay-di p { margin: 0.2rem 0 0; }
+    .ghi-chu {
+      color: var(--chu-phu);
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-top: 0.6rem;
+    }
+
+    /* CHUAN BI */
+    .chuan-bi {
+      background: var(--nen-phu);
+      border-radius: 10px;
+      padding: 1rem 1rem 0.4rem;
+    }
+    .chuan-bi ul { margin: 0; padding-left: 1.2rem; }
+    .chuan-bi li { margin-bottom: 0.6rem; }
+
+    /* DANG KY */
+    .dang-ky {
+      background: var(--nen-phu);
+      border: 3px solid var(--nau);
+      border-radius: 12px;
+      padding: 1.3rem 1rem;
+      text-align: center;
+      break-inside: avoid;
+    }
+    .dang-ky h2 {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1.45rem;
+    }
+    .dang-ky .noi-dk { font-size: 1.1rem; }
+    .han-chot {
+      display: inline-block;
+      margin: 0.6rem 0 0.8rem;
+      background: var(--xanh);
+      color: #ffffff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+    .han-chot span { display: block; font-size: 0.85rem; font-weight: 600; color: var(--trang); }
+    .dang-ky .ly-do { color: var(--chu-phu); font-size: 0.95rem; margin: 0; }
+
+    /* CHAN TRANG */
+    footer {
+      text-align: center;
+      padding: 1.6rem 16px 2rem;
+    }
+    .ky-ten { font-weight: 700; color: var(--xanh); font-size: 1.1rem; margin: 0; }
+    .nut-in {
+      margin-top: 1.2rem;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--xanh);
+      background: var(--nen);
+      border: 2px solid var(--xanh);
+      border-radius: 8px;
+      padding: 0.5rem 1.2rem;
+      cursor: pointer;
+    }
+
+    @media print {
+      html { font-size: 16px; }
+      body { background: #ffffff; }
+      .nut-in { display: none; }
+      .tieu-de, .so-ngay, .han-chot { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="trang">
+
+  <header class="tieu-de">
+    <span class="nhan">THÔNG BÁO TOUR DU LỊCH</span>
+    <h1>Khám phá vùng Tây Bắc<span>Mộc&nbsp;I�âu - Điện&nbsp;Biên</span></h1>
+    <p class="ngay">6 ngày 5 đêm<br><span class="nowrap">Thứ Hai 09/11</span> - <span class="nowrap">Thứ Bảy 14/11/2026</span></p>
+  </header>
+
+  <main>
+
+    <!-- 1. THONG TIN NHANH -->
+    <section>
+      <h2>Thông tin chuyến đi</h2>
+      <ul class="thong-tin">
+        <li><span class="muc">Thời gian</span>Từ thứ Hai 09/11 đến thứ Bảy 14/11/2026</li>
+        <li><span class="muc">Đi lại</span>Bay Cần Thơ -> Hà Nội. Chiều về bay Điện Biên -> Hà Nội -> Cần Thơ, không phải ngồi xe đường dài quay về.</li>
+        <li><span class="muc">Lưu trú</span>Ưu tiên chọn khách sạn tốt của từng khu vực, đảm bảo mọi người nghỉ ngơi thư giãn, giữ gìn sức khỏe. Mộc Châu 2 đêm, Điện Biên 2 đêm, Hà Nội 1 đêm.</li>
+        <li><span class="muc">Xe</span>Xe riêng cho đoàn suốt tuyến</li>
+      </ul>
+    </section>
+
+    <!-- 2. UU DIEM -->
+    <section>
+      <h2>Vì sao nên đi dịp này?</h2>
+      <ul class="uu-diem">
+        <li><strong>Mùa hoa cải trắng Mộc Châu</strong> đang vào độ nở rộ. Dọc Quốc lộ 6 thường có dã quỳ vàng nở báo mùa đông.</li>
+        <li><strong>Trời đẹp, ít mưa:</strong> tháng 11 là đầu mùa khô, trời trong, ban ngày mát khoảng 18-22°C.</li>
+        <li><strong>Không trùng mùa lễ hội</strong> nên các điểm tham quan thong thả, không chen lấn.</li>
+        <li><strong>Lịch đi nhẹ nhàng:</strong> sau mỗi ngày đi xe dài có một ngày nghỉ nhẹ, ngày nào cũng có giờ nghỉ trưa.</li>
+        <li><strong>Tối thứ Sáu ở Hà Nội</strong> đúng dịp phố đi bộ Hồ Gươm mở cửa.</li>
+      </ul>
+    </section>
+
+    <!-- 3. HANH TRINH -->
+    <section>
+      <h2>Hành trình và điểm tham quan</h2>
+
+      <div class="ngay-di">
+        <div class="so-ngay"><small>NGÀY</small><b>1</b></div>
+        <div>
+          <h3><span class="thu">Thứ Hai 09/11</span>Cần Thơ -> Hà Nội -> Mộc Châu</h3>
+          <p>Bay sáng sớm ra Hà Nội, xe đưa lên Mộc Châu. Dừng ngắm cảnh đèo Thung Khe.</p>
+        </div>
+      </div>
+
+      <div class="ngay-di">
+        <div class="so-ngay"><small>NGÀY</small><b>2</b></div>
+        <div>
+          <h3><span class="thu">Thứ Ba 10/11</span>Mộc Châu - ngày nhẹ nhàng</h3>
+          <p>Đồi chè Trái Tim, rừng thông Bản Áng, ngắm vườn hoa cải trắng.</p>
+        </div>
+      </div>
+
+      <div class="ngay-di">
+        <div class="so-ngay"><small>NGÀY</small><b>3</b></div>
+        <div>
+          <h3><span class="thu">Thứ Tư 11/11</span>Mộc Châu -> Điện Biên</h3>
+          <p>Ăn trưa tại Sơn La, dừng ngắm cảnh đỉnh đèo Pha Đin. Đến Điện Biên trước khi trời tối.</p>
+        </div>
+      </div>
+
+      <div class="ngay-di">
+        <div class="so-ngay"><small>NGÀY</small><b>4</b></div>
+        <div>
+          <h3><span class="thu">Thứ Năm 12/11</span>Điện Biên - ngày nhẹ nhàng</h3>
+          <p>Bảo tàng Chiến thắng lịch sử Điện Biên Phủ. Chiều tắm khoáng nóng U Va.</p>
+        </div>
+      </div>
+
+      <div class="ngay-di">
+        <div class="so-ngay"><small>NGÀY</small><b>5</b></div>
+        <div>
+          <h3><span class="thu">Thứ Sáu 13/11</span>Mường Phăng -> bay về Hà Nội</h3>
+          <p>Thăm Sở chỉ huy chiến dịch Điện Biên Phủ tại Mường Phăng. Chiều bay về Hà Nội, tối ăn chả cá, dạo phố cổ và Hồ Gươm.</p>
+        </div>
+      </div>
+
+      <div class="ngay-di">
+        <div class="so-ngay"><small>NGÀY</small><b>6</b></div>
+        <div>
+          <h3><span class="thu">Thứ Bảy 14/11</span>Hà Nội -> Cần Thơ</h3>
+          <p>Sáng thong thả, bay về Cần Thơ.</p>
+        </div>
+      </div>
+
+      <p class="ghi-chu">Giờ giấc chi tiết có thể điều chỉnh nhẹ theo giờ bay và thời tiết thực tế.</p>
+    </section>
+
+    <!-- 4. CHUAN BI -->
+    <section>
+      <h2>Chuẩn bị hành lý</h2>
+      <div class="chuan-bi">
+        <ul>
+          <li><strong>Áo ấm, khăn, mũ len:</strong> ban đêm và sáng sớm lạnh khoảng 12-16°C.</li>
+          <li><strong>Giày đế mềm,</strong> không trơn trượt.</li>
+          <li><strong>Thuốc uống hằng ngày:</strong> mang gấp đôi số ngày đi.</li>
+          <li><strong>Căn cước công dân bản gốc</strong> để làm thủ tục bay.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. DANG KY -->
+    <section>
+      <div class="dang-ky">
+        <h2>Mời cả nhà Phượng Hoàng Travel đăng ký tham gia</h2>
+        <p class="noi-dk">Đăng ký trên <strong>nhóm Zalo Phượng Hoàng Travel</strong></p>
+        <div class="han-chot"><span>HẠN CHÓT ĐĂNG KÝ</span>Thứ Tư, 07/10/2026</div>
+        <p class="ly-do">Ban tổ chức cần chốt danh sách sớm để giữ chỗ vé máy bay, vì chặng Điện Biên - Hà Nội mỗi ngày chỉ có 1 chuyến.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="ky-ten">Ban tổ chức Phượng Hoàng Travel</p>
+    <button class="nut-in" onclick="window.print()">In / Lưu PDF</button>
+  </footer>
+
+</div>
+</body>
+</html>
