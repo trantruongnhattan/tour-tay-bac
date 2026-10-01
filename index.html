@@ -204,6 +204,31 @@
     .han-chot span { display: block; font-size: 0.85rem; font-weight: 600; color: var(--trang); }
     .dang-ky .ly-do { color: var(--chu-phu); font-size: 0.95rem; margin: 0; }
 
+    /* ANH */
+    .anh-dau { margin: 0; }
+    .anh-dau img { display: block; width: 100%; height: auto; }
+    .anh-dau figcaption, .chu-anh {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--chu-phu);
+    }
+    .anh-dau figcaption { padding: 0.3rem 16px 0; text-align: right; }
+    .ngay-di > div:last-child { flex: 1; min-width: 0; }
+    .anh-ngay {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 0.6rem;
+    }
+    .nguon-anh {
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--chu-phu);
+      margin: 1rem 0 0;
+    }
+    .nguon-anh a { color: var(--chu-phu); }
+
     /* CHAN TRANG */
     footer {
       text-align: center;
@@ -240,6 +265,11 @@
     <h1>Khám phá vùng Tây Bắc<span>Mộc&nbsp;Châu - Điện&nbsp;Biên</span></h1>
     <p class="ngay">6 ngày 5 đêm<br><span class="nowrap">Thứ Hai 09/11</span> - <span class="nowrap">Thứ Bảy 14/11/2026</span></p>
   </header>
+
+  <figure class="anh-dau">
+    <img src="anh/anh-dau-trang-moc-chau.jpg" alt="Đồi núi Mộc Châu lúc hoàng hôn" width="1280" height="854">
+    <figcaption>Ảnh minh họa: cao nguyên Mộc Châu</figcaption>
+  </figure>
 
   <main>
 
@@ -283,6 +313,7 @@
         <div>
           <h3><span class="thu">Thứ Ba 10/11</span>Mộc Châu - ngày nhẹ nhàng</h3>
           <p>Đồi chè Trái Tim, rừng thông Bản Áng, ngắm vườn hoa cải trắng.</p>
+          <img class="anh-ngay" src="anh/doi-che-moc-chau.jpg" alt="Đồi chè Mộc Châu" width="960" height="640" loading="lazy">
         </div>
       </div>
 
@@ -291,6 +322,7 @@
         <div>
           <h3><span class="thu">Thứ Tư 11/11</span>Mộc Châu -> Điện Biên</h3>
           <p>Ăn trưa tại Sơn La, dừng ngắm cảnh đỉnh đèo Pha Đin. Đến Điện Biên trước khi trời tối.</p>
+          <img class="anh-ngay" src="anh/deo-pha-din.jpg" alt="Đèo Pha Đin" width="1280" height="850" loading="lazy">
         </div>
       </div>
 
@@ -299,6 +331,7 @@
         <div>
           <h3><span class="thu">Thứ Năm 12/11</span>Điện Biên - ngày nhẹ nhàng</h3>
           <p>Bảo tàng Chiến thắng lịch sử Điện Biên Phủ. Chiều tắm khoáng nóng U Va.</p>
+          <img class="anh-ngay" src="anh/bao-tang-dien-bien-phu.jpg" alt="Bảo tàng Chiến thắng lịch sử Điện Biên Phủ" width="1280" height="938" loading="lazy">
         </div>
       </div>
 
@@ -307,6 +340,7 @@
         <div>
           <h3><span class="thu">Thứ Sáu 13/11</span>Mường Phăng -> bay về Hà Nội</h3>
           <p>Thăm Sở chỉ huy chiến dịch Điện Biên Phủ tại Mường Phăng. Chiều bay về Hà Nội, tối ăn chả cá, dạo phố cổ và Hồ Gươm.</p>
+          <img class="anh-ngay" src="anh/ho-guom-thap-rua.jpg" alt="Tháp Rùa, Hồ Gươm" width="1280" height="861" loading="lazy">
         </div>
       </div>
 
@@ -348,6 +382,14 @@
 
   <footer>
     <p class="ky-ten">Ban tổ chức Phượng Hoàng Travel</p>
+    <p class="nguon-anh">Ảnh minh họa từ Wikimedia Commons:
+      <a href="https://commons.wikimedia.org/wiki/File:M%E1%BB%99c_Ch%C3%A2u_District,_Vietnam_(Unsplash).jpg">cao nguyên Mộc Châu</a> (Linh Pham, CC0);
+      <a href="https://commons.wikimedia.org/wiki/File:Moc-chau-tea-doi-2094890_960_720.jpg">đồi chè Mộc Châu</a> (ToanNguyen, CC0);
+      <a href="https://commons.wikimedia.org/wiki/File:%C4%90%C3%A8o_Pha_%C4%90in_-_panoramio.jpg">đèo Pha Đin</a> (ChieuTimViet, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>);
+      <a href="https://commons.wikimedia.org/wiki/File:The_Museum_of_Dien_Bien_Phu_Victory_(front,_2022).jpg">Bảo tàng Chiến thắng lịch sử Điện Biên Phủ</a> (Ioe2015, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>);
+      <a href="https://commons.wikimedia.org/wiki/File:Hanoi_-_Turtle_Tower_(Th%C3%A1p_R%C3%B9a),_Ho%C3%A0n_Ki%E1%BA%BFm_Lake.jpg">Tháp Rùa, Hồ Gươm</a> (P. Hughes, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).
+      Ảnh đã thu nhỏ kích thước, không chỉnh sửa nội dung.
+    </p>
     <button class="nut-in" onclick="window.print()">In / Lưu PDF</button>
   </footer>
 
